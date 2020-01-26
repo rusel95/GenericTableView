@@ -1,0 +1,2 @@
+exampleTabBarFontUnselectedColor: #505050
+exampleTabBarFontSelectedColor: #FF596D

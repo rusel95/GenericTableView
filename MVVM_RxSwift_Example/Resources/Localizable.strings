@@ -1,0 +1,34 @@
+/* 
+  Localizable.strings
+
+  Copyright © 2016 RuslanPopesku. All rights reserved.
+*/
+
+// Common Buttons
+"common_buttons.save_button.title" = "Save";
+"common_buttons.ok_button.title" = "OK";
+
+// Login
+"auth.login_button.title" = "Login testing again";
+
+// HUDs
+"alert.default_error_tile" = "Error";
+"alert.default_success_tile" = "Success";
+"alert.default_info_tile" = "Information";
+
+// Errors
+"error.cannot_login" = "Cannot login, please try again later";
+"error.undefined" = "Something went wrong, please try again later";
+
+// Settings
+"settingsWorkDuration" = "work";
+"settingsBreakDuration" = "break";
+"settingsLongBreak" = "long break";
+"settingsDailyGoal" = "daily goal";
+"settingsSessionsUntilLongBreak" = "sessions until long break";
+
+// Tabs
+"exploreTabTitle" = "EXPLORE";
+"mapTabTitle" = "MAP";
+"ordersTabTitle" = "ORDERS";
+"profileTabTitle" = "PROFILE";

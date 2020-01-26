@@ -1,0 +1,22 @@
+input_dir: MVVM_RxSwift_Example/
+output_dir: MVVM_RxSwift_Example/Common/Extensions/SwiftGen/
+strings:
+  inputs: Resources/Localizable.strings
+  outputs:
+     templateName: flat-swift4
+     output: Localization+SwiftGen.swift
+xcassets:
+  inputs: Resources/Assets.xcassets
+  outputs:
+    templateName: swift4
+    output: Images+SwiftGen.swift
+ib:
+  inputs: Flows/
+  outputs:
+    templateName: scenes-swift4
+    output: Storyboards+SwiftGen.swift
+colors:
+  inputs: Resources/Colors.txt
+  outputs:
+    templateName: swift4
+    output: Colors+SwiftGen.swift
