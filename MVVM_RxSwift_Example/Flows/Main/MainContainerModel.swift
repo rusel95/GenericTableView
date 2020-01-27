@@ -42,8 +42,8 @@ final class MainContainerModel: EventNode, HasDisposeBag {
             .subscribe(onNext: { [weak self] tab in
                 guard let self = self else { return }
                 switch tab {
-                case .list:
-                    self.raise(event: MainFlowEvent.switchToList)
+                case .explore:
+                    self.raise(event: MainFlowEvent.switchToExplore)
                 case .map:
                     self.raise(event: MainFlowEvent.switchToMap)
                 case .orders:

@@ -22,6 +22,13 @@ internal enum StoryboardScene {
 
     internal static let exploreViewContoller = SceneType<MVVM_RxSwift_Example.ExploreViewController>(storyboard: Explore.self, identifier: "ExploreViewContoller")
   }
+  internal enum GenericPickerViewController: StoryboardType {
+    internal static let storyboardName = "GenericPickerViewController"
+
+    internal static let initialScene = InitialSceneType<MVVM_RxSwift_Example.GenericPickerViewController>(storyboard: GenericPickerViewController.self)
+
+    internal static let genericPickerViewController = SceneType<MVVM_RxSwift_Example.GenericPickerViewController>(storyboard: GenericPickerViewController.self, identifier: "GenericPickerViewController")
+  }
   internal enum Map: StoryboardType {
     internal static let storyboardName = "Map"
 

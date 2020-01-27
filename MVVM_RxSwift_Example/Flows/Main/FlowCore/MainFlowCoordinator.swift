@@ -8,14 +8,14 @@ import UIKit
 import Swinject
 
 enum MainFlowEvent: Event {
-    case switchToList
+    case switchToExplore
     case switchToMap
     case switchToOrders
     case switchToProfile
 }
 
 enum Tab: Int {
-    case list
+    case explore
     case map
     case orders
     case profile
@@ -178,8 +178,8 @@ final class MainFlowCoordinator: EventNode, FlowCoordinator {
     private func addHandlers() {
         addHandler { [weak self] (event: MainFlowEvent) in
             switch event {
-            case .switchToList:
-                self?.tabBarController.selectedIndex = Tab.list.rawValue
+            case .switchToExplore:
+                self?.tabBarController.selectedIndex = Tab.explore.rawValue
             case .switchToMap:
                 self?.tabBarController.selectedIndex = Tab.map.rawValue
             case .switchToOrders:

@@ -10,7 +10,7 @@ import Swinject
 import SwinjectAutoregistration
 
 enum ExploreNavigationEvent: Event {
-
+    case selectObjectFrom(items: [CellConfigurator])
 }
 
 final class ExploreFlowCoordinator: EventNode, FlowCoordinator {
@@ -31,16 +31,14 @@ final class ExploreFlowCoordinator: EventNode, FlowCoordinator {
     
     func addHandlers() {
         addHandler { [weak self] (event: ExploreNavigationEvent) in
-            self?.handle(event)
+            switch event {
+            case .selectObjectFrom(let items):
+                let genericVC: GenericPickerViewController = ControllerFactory.createViewController()
+                self?.rootViewController?.navigationController?.present(genericVC, animated: true)
+            }
         }
     }
-    
-    private func handle(_ event: ExploreNavigationEvent) {
-        switch event {
-        
-        }
-    }
-    
+
     func createFlow() -> UIViewController {
         let controller: ExploreViewController = container.autoresolve(argument: self)
         controller.title = L10n.exploreTabTitle

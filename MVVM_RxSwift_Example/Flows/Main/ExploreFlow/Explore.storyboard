@@ -1,28 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Explore View Controller-->
         <scene sceneID="7fb-i4-irn">
             <objects>
-                <viewController storyboardIdentifier="ExploreViewContoller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mxQ-yo-gkY" customClass="ExploreViewController" customModule="Buyper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ExploreViewContoller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mxQ-yo-gkY" customClass="ExploreViewController" customModule="MVVM_RxSwift_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dTT-fO-RF7"/>
                         <viewControllerLayoutGuide type="bottom" id="Nky-If-HNZ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pNt-Qj-Soq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wg9-i6-aEC">
+                                <rect key="frame" x="16" y="782" width="382" height="64"/>
+                                <color key="backgroundColor" red="0.3174008727" green="0.74513441319999996" blue="0.35680970550000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="Br9-RL-zJ9"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Select Object"/>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4l4-hl-3GM">
+                                <rect key="frame" x="20" y="60" width="374" height="697"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="mxQ-yo-gkY" id="AEd-CT-h35"/>
+                                    <outlet property="delegate" destination="mxQ-yo-gkY" id="fpw-Ff-F08"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="0.066666666669999999" green="0.1960784314" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="4l4-hl-3GM" firstAttribute="leading" secondItem="pNt-Qj-Soq" secondAttribute="leadingMargin" id="90b-Vl-8cd"/>
+                            <constraint firstItem="wg9-i6-aEC" firstAttribute="leading" secondItem="pNt-Qj-Soq" secondAttribute="leading" constant="16" id="ORX-Rt-M76"/>
+                            <constraint firstItem="wg9-i6-aEC" firstAttribute="top" secondItem="4l4-hl-3GM" secondAttribute="bottom" constant="25" id="Pg8-Wp-lnZ"/>
+                            <constraint firstItem="Nky-If-HNZ" firstAttribute="top" secondItem="wg9-i6-aEC" secondAttribute="bottom" constant="16" id="RHs-RG-JSE"/>
+                            <constraint firstAttribute="trailing" secondItem="wg9-i6-aEC" secondAttribute="trailing" constant="16" id="eMm-KZ-SQL"/>
+                            <constraint firstItem="4l4-hl-3GM" firstAttribute="top" secondItem="dTT-fO-RF7" secondAttribute="bottom" constant="16" id="vi7-ek-Jgx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4l4-hl-3GM" secondAttribute="trailing" id="xy3-EK-khc"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="chooseObjectButton" destination="wg9-i6-aEC" id="hOY-mf-Bb5"/>
+                        <outlet property="tableView" destination="4l4-hl-3GM" id="bgd-Sf-87h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Jk-9p-CSg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

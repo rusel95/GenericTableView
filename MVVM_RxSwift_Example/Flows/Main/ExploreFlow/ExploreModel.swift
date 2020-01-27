@@ -1,19 +1,21 @@
 //
-//  TimerModel.swift
+// ExploreModel.swift
 //
 //  Copyright © 2019 Ruslan Popesku. All rights reserved.
 //
 
-import Foundation
 import RxSwift
 import RxCocoa
 import RxRealm
 
+enum ChooseObjectEvent: Event {
+    case newLikes(count: Int)
+}
+
 final class ExploreModel: EventNode, HasDisposeBag {
-    
-    private var timer = Timer()
-    private var isTimerWorking = false
-    
+
+    let goToChooseObjectAction = PublishSubject<Void>()
+
     override init(parent: EventNode) {
         super.init(parent: parent)
         
@@ -22,18 +24,21 @@ final class ExploreModel: EventNode, HasDisposeBag {
     }
     
     private func initializeBindings() {
-
+        goToChooseObjectAction
+            .doOnNext { [weak self] _ in
+                self?.raise(event: ExploreNavigationEvent.selectObjectFrom(items: []))
+            }.disposed(by: disposeBag)
     }
     
     // MARK: - private
     private func addHandlers() {
-//        addHandler { [unowned self] (event: ApplicationEvent) in
+        addHandler { [unowned self] (event: ChooseObjectEvent) in
 //            switch event {
 //            case .applicationDidEnterBackground:
 //                self.pauseWhenBackround()
 //            case .applicationWillEnterForeground:
 //                self.willEnterForeground()
 //            }
-//        }
+        }
     }
 }
